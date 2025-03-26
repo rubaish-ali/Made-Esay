@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversions Made Easy</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header,
+        .body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff, #e6f0ff);
+            height: 40ch;
+        }
+
+        .img {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .img a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+
+        }
+
+        .img a:hover {
+            background: #e3eeff;
+        }
+
+        .container {
+            margin-top: 50px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 60px;
+            font-weight: bold;
+            color: #0056b3;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 30px;
+            font-style: italic;
+            color: black;
+        }
+
+        .animated-text {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+            color: #0056b3;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            font-family: "Outfit";
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            background-color: #a3c2ff;
+            border-radius: 30px;
+            outline: none;
+            border: 0;
+            text-transform: capitalize;
+            color: white;
+        }
+
+        .body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #e6f0ff, #a3c2ff);
+            margin: 0;
+            padding: 0;
+            height: 100ch;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .navbar a:hover {
+            background: #cce0ff;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .titles {
+            font-size: 60px;
+            font-weight: bold;
+            color: #0056b3;
+            text-transform: uppercase;
+        }
+
+        .subtitles {
+            font-size: 30px;
+            font-style: italic;
+            color: black;
+        }
+
+        .table-container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: #0056b3;
+            color: white;
+            text-transform: uppercase;
+        }
+        .containers{
+            width: 60%;
+            margin:160px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: rgb(253, 215, 215);
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        .button {
+            padding: auto;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .containr {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background: rgb(253, 215, 215);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 15px;
+            margin: 5px;
+            background: blue;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        button {
+            padding: auto;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .cont {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 15px;
+            margin: 5px;
+            background: rgb(181, 181, 255);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab-container {
+            display: flex;
+            background: #ddd;
+            padding: 5px;
+            border-radius: 5px;
+            width: fit-content;
+            margin: auto;
+        }
+        .tab {
+            padding: 10px 15px;
+            margin: 2px;
+            background: #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background:pink;
+            color: white;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            background: #e0e0e0;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .footer div {
+            text-align: left;
+        }
+        select, input {
+            padding: 10px;
+            margin: 10px;
+            width: 80%;
+        }
+        .button {
+            padding: auto;
+            background: rgb(250, 157, 236);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .converter-container {
+            width: 50%;
+            margin: 20px auto;
+            background: rgb(211, 170, 170);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .converter-container h2 {
+            color: blue;
+        }
+        .input-group {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+        }
+        select, input {
+            padding: 10px;
+            width: 45%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="img">
+            <img src="u convert.png" alt="">
+            <a href="#">Home</a>
+            <a href="#">Common Conversions</a>
+            <a href="#">Convert Units</a>
+            <button>get started</button>
+        </div>
+        <!-- <div class="navbar">
+        
+    </div> -->
+        <div class="container">
+            <!-- <div class="title">CONVERSIONS</div>
+        <div class="subtitle">MADE EASY</div> -->
+            <div class="animated-text" id="animatedText">CONVERSIONS AT MADE EASY</div>
+        </div>
+    </header>
+    <div class="body">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Text</th>
+                    <th>Symbol</th>
+                    <th>Factor</th>
+                    <th>Power</th>
+                </tr>
+                <tr>
+                    <td>exa</td>
+                    <td>E</td>
+                    <td>1000000000000000000</td>
+                    <td>10¹⁸</td>
+                </tr>
+                <tr>
+                    <td>peta</td>
+                    <td>P</td>
+                    <td>1000000000000000</td>
+                    <td>10¹⁵</td>
+                </tr>
+                <tr>
+                    <td>tera</td>
+                    <td>T</td>
+                    <td>1000000000000</td>
+                    <td>10¹²</td>
+                </tr>
+                <tr>
+                    <td>giga</td>
+                    <td>G</td>
+                    <td>1000000000</td>
+                    <td>10⁹</td>
+                </tr>
+                <tr>
+                    <td>mega</td>
+                    <td>M</td>
+                    <td>1000000</td>
+                    <td>10⁶</td>
+                </tr>
+                <tr>
+                    <td>kilo</td>
+                    <td>k</td>
+                    <td>1000</td>
+                    <td>10³</td>
+                </tr>
+                <tr>
+                    <td>hecto</td>
+                    <td>h</td>
+                    <td>100</td>
+                    <td>10²</td>
+                </tr>
+                <tr>
+                    <td>deca</td>
+                    <td>da</td>
+                    <td>10</td>
+                    <td>10¹</td>
+                </tr>
+                <tr>
+                    <td>(none)</td>
+                    <td>(none)</td>
+                    <td>1</td>
+                    <td>10⁰</td>
+                </tr>
+                <tr>
+                    <td>deci</td>
+                    <td>d</td>
+                    <td>0.1</td>
+                    <td>10⁻¹</td>
+                </tr>
+                <tr>
+                    <td>centi</td>
+                    <td>c</td>
+                    <td>0.01</td>
+                    <td>10⁻²</td>
+                </tr>
+                <tr>
+                    <td>milli</td>
+                    <td>m</td>
+                    <td>0.001</td>
+                    <td>10⁻³</td>
+                </tr>
+                <tr>
+                    <td>micro</td>
+                    <td>µ</td>
+                    <td>0.000001</td>
+                    <td>10⁻⁶</td>
+                </tr>
+                <tr>
+                    <td>nano</td>
+                    <td>n</td>
+                    <td>0.000000001</td>
+                    <td>10⁻⁹</td>
+                </tr>
+                <tr>
+                    <td>pico</td>
+                    <td>p</td>
+                    <td>0.000000000001</td>
+                    <td>10⁻¹²</td>
+                </tr>
+                <tr>
+                    <td>femto</td>
+                    <td>f</td>
+                    <td>0.000000000000001</td>
+                    <td>10⁻¹⁵</td>
+                </tr>
+                <tr>
+                    <td>atto</td>
+                    <td>a</td>
+                    <td>0.000000000000000001</td>
+                    <td>10⁻¹⁸</td>
+                </tr>
+            </table>
+        </div>
+        <div class="containers">
+            <h1>Unit Converter</h1>
+            <div class="tab-container">
+                <div class="tab active">LENGTH</div>
+                <div class="tab">TEMPERATURE</div>
+                <div class="tab">AREA</div>
+                <div class="tab">VOLUME</div>
+                <div class="tab">WEIGHT</div>
+                <div class="tab">TIME</div>
+            </div>
+            <label for="fromUnit">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value">
+            <select id="fromUnit">
+                <option value="inches">Inches</option>
+                <option value="centimeters">Centimeters</option>
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+            </select>
+            <br>
+            <label for="toUnit">To:</label>
+            <input type="text" id="toValue" readonly>
+            <select id="toUnit">
+                <option value="centimeters">Centimeters</option>
+                <option value="inches">Inches</option>
+                <option value="pounds">Pounds</option>
+                <option value="kilograms">Kilograms</option>
+            </select>
+            <br>
+            <button class="button">Convert</button>
+        </div>
+        <div class="containr">
+            <h1>Common Conversions</h1>
+            <div class="tab-container">
+                <div class="tab active">KILOGRAMS</div>
+                <div class="tab">KILOMETERS</div>
+                <div class="tab">LITERS</div>
+                <div class="tab">CELSIUS</div>
+                <div class="tab">INCHES</div>
+                <div class="tab">METER</div>
+                <div class="tab">ACRES</div>
+            </div>
+            <label for="fromUnit">From:</label>
+            <input type="number" id="fromValue" placeholder="Enter value">
+            <select id="fromUnit">
+                <option value="kilograms">Kilograms</option>
+                <option value="pounds">Pounds</option>
+            </select>
+            <br>
+            <label for="toUnit">To:</label>
+            <input type="text" id="toValue" readonly>
+            <select id="toUnit">
+                <option value="pounds">Pounds</option>
+                <option value="kilograms">Kilograms</option>
+            </select>
+            <br>
+            <button class="button">Convert</button>
+        </div>
+        <div class="footer">
+            <div>
+                <h3>U CONVERT</h3>
+                <p>Uconvert.com</p>
+                <p>+1234 456 678 89</p>
+            </div>
+            <div>
+                <h3>LINKS</h3>
+                <p>Home</p>
+                <p>Common Conversions</p>
+                <p>Convert Units</p>
+            </div>
+            <div>
+                <h3>LEGAL</h3>
+                <p>Terms of Use</p>
+                <p>Privacy Policy</p>
+                <p>Cookie Policy</p>
+            </div>
+            <div>
+                <h3>NEWSLETTER</h3>
+                <p>Stay Up To Date</p>
+                <input type="email" placeholder="Your email">
+                <button>SUBSCRIBE</button>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                setTimeout(() => {
+                    document.getElementById("animatedText").style.opacity = 1;
+                }, 500);
+            });
+        </script>
+</body>
+
+</html>
